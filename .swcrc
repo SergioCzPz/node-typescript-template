@@ -1,0 +1,26 @@
+{
+  "$schema": "https://swc.rs/schema.json",
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": false,
+      "decorators": true,
+      "dynamicImport": true
+    },
+    "target": "esnext",
+    "baseUrl": "./",
+    "paths": {
+      "@utils/*": ["src/utils/*"]
+    }
+  },
+  "module": {
+    "type": "es6",
+    "resolveFully": true,
+    "strictMode": true,
+    "strict": false,
+    "ignoreDynamic": false,
+    "noInterop": false
+  },
+  "sourceMaps": true,
+  "minify": false
+}

@@ -1,0 +1,44 @@
+{
+  "name": "node-typescript-template",
+  "version": "1.0.0",
+  "description": "Node.js and Typescript template configuration to work with eslint, prettier and husky",
+  "keywords": [
+    "typescript",
+    "express",
+    "eslint",
+    "husky"
+  ],
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "lint": "npx eslint ./src",
+    "lint:fix": "npx eslint --fix-dry-run ./src",
+    "start": "node dist/app.js",
+    "dev": "npx tsx watch ./src/app.ts",
+    "test": "vitest run",
+    "build": "node --run validate-typescript && node --run build:clean && node --run generate-dist",
+    "validate-typescript": "tsc -p tsconfig.prod.json",
+    "build:clean": "rimraf dist; exit 0",
+    "generate-dist": "swc ./src -d dist --strip-leading-paths",
+    "prepare": "husky"
+  },
+  "author": "Sergio Cruz",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "19.8.0",
+    "@commitlint/config-conventional": "19.8.0",
+    "@eslint/js": "9.23.0",
+    "@swc/cli": "0.6.0",
+    "@swc/core": "1.11.11",
+    "eslint": "9.23.0",
+    "eslint-config-prettier": "10.1.1",
+    "husky": "9.1.7",
+    "lint-staged": "15.5.0",
+    "rimraf": "6.0.1",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2",
+    "typescript-eslint": "8.27.0",
+    "vite-tsconfig-paths": "5.1.4",
+    "vitest": "3.0.9"
+  }
+}
