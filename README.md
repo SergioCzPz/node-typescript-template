@@ -28,7 +28,7 @@ Work with:
 1. You can create a new repository based in this repository in `Use this template` label or clone it:
 
 ```bash
-git clone
+git clone https://github.com/SergioCzPz/node-typescript-template
 ```
 
 2. Checkout `.node-version` file and your current version of node.js. See it with: `node -v`
@@ -84,6 +84,8 @@ npm start
 This will execute `dist/app.js`
 
 ## Considerations
+
+- It's necessary to create a test file to make a commit, you can delete `npm test` from `.husky/pre-commit` file and not run any test.
 
 - Feel free to modify `.prettierrc`, you could also find [more configurations](https://prettier.io/docs/precommit) to format your code and pre-commit hook
 
